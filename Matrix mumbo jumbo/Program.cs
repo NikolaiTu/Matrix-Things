@@ -17,6 +17,7 @@ namespace Matrix_mumbo_jumbo
         //multiply matrix with number
         // add matrix w matrix
         //find determinant of matrix 
+        
         static void Main(string[] args)
         {
             double[,] data = {
@@ -65,9 +66,13 @@ namespace Matrix_mumbo_jumbo
             Matrix<double> AddResult = matrix + matrix2;
             Console.WriteLine(AddResult);
 
+            Console.WriteLine("Determinant");
             double Determinant = matrix.Determinant();
             Console.WriteLine(Determinant);
 
+            var Vector = new DenseVector(new[] { 12.0,8.0,5.0 });
+            var Solve = matrix.Solve(Vector);
+            Console.WriteLine(Solve);
         }
     }
 }
